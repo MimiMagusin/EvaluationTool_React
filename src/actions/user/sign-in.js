@@ -1,7 +1,7 @@
 import API from '../../api'
-import loading from '../loading'
-import loadError from '../load-error'
-import loadSuccess from '../load-success'
+import loading from '../loading/loading'
+import loadError from '../loading/load-error'
+import loadSuccess from '../loading/load-success'
 import { history } from '../../store'
 
 export const USER_SIGNED_IN = 'USER_SIGNED_IN'

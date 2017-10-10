@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import signIn from '../actions/user/sign-in'
+import signIn from '../../actions/user/sign-in'
 //import Title from '../components/Title'
 //<Title content="Sign In" />
 

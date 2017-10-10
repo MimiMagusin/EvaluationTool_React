@@ -6,7 +6,7 @@ import store, { history } from './store'
 import registerServiceWorker from './registerServiceWorker'
 
 import App from './App'
-import signIn from './users/sign-in'
+import signIn from './components/users/sign-in'
 
 import './index.css'
 

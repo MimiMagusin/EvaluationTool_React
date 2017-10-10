@@ -1,7 +1,7 @@
 // src/reducers/loading.test.js
 
 import { expect } from 'chai'
-import { APP_LOADING, APP_DONE_LOADING } from '../actions/loading'
+import { APP_LOADING, APP_DONE_LOADING } from '../actions/loading/loading'
 import reducer from './loading'
 
 const initialState = false

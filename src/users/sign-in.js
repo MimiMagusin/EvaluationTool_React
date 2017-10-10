@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import signIn from '../actions/user/sign-in'
-import Title from '../components/Title'
+//import Title from '../components/Title'
+//<Title content="Sign In" />
 
 export class SignIn extends PureComponent {
   submitForm(event) {
@@ -18,7 +19,7 @@ export class SignIn extends PureComponent {
   render() {
     return (
       <div className="sign-up form">
-        <Title content="Sign In" />
+        <h1> Sign in </h1>
 
         <form onSubmit={this.submitForm.bind(this)}>
           <div className="input">

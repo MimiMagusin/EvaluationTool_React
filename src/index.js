@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker'
 
 import App from './App'
 import signIn from './components/users/sign-in'
+import BatchIndex from './components/BatchIndex'
 
 import './index.css'
 

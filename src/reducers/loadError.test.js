@@ -1,8 +1,8 @@
 // src/reducers/loadError.test.js
 
 import { expect } from 'chai'
-import { LOAD_ERROR } from '../actions/load-error'
-import { LOAD_SUCCESS } from '../actions/load-success'
+import { LOAD_ERROR } from '../actions/loading/load-error'
+import { LOAD_SUCCESS } from '../actions/loading/load-success'
 import reducer from './loadError'
 
 const initialState = null

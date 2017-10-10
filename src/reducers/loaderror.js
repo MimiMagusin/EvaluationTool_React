@@ -1,5 +1,5 @@
-import { LOADING_ERROR } from '../actions/loaderror'
-import { LOADING_SUCCESS } from '../actions/loadsucces'
+import { LOADING_ERROR } from '../actions/loading/loaderror'
+import { LOADING_SUCCESS } from '../actions/loading/loadsucces'
 
 export default (state = "", { type, payload } = {}) => {
   switch(type) {

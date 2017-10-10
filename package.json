@@ -24,5 +24,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "chai-enzyme": "^0.8.0",
+    "enzyme": "~>2",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.0.0"
   }
 }

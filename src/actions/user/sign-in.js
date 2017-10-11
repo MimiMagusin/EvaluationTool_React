@@ -23,7 +23,6 @@ export default (user) => {
         history.push('/')
       })
       .catch((error) => {
-        debugger;
         dispatch(loading(false))
         dispatch(loadError(error))
       })

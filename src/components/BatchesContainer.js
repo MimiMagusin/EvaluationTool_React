@@ -30,11 +30,11 @@ this.props.fetchBatches()
 
   render() {
   const { batches } = this.props
-    // if (!batches) {
-    //   return (
-    //     <h2> Nothing Yet! </h2>
-    //   )
-    // }
+    if (!batches) {
+      return (
+        <h2> Nothing Yet! </h2>
+      )
+    }
 
     return(
       <div className="batches wrapper">

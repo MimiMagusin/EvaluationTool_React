@@ -29,6 +29,7 @@ export default () => {
         })
       })
       .catch((error) => {
+        debugger;
         dispatch(loading(false))
         dispatch(loadError(error))
       })

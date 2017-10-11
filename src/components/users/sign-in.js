@@ -1,38 +1,78 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { replace, push } from 'react-router-redux'
+import Paper from 'material-ui/Paper'
+import TextField from 'material-ui/TextField'
+import RaisedButton from 'material-ui/RaisedButton'
+import FlatButton from 'material-ui/FlatButton'
 import signIn from '../../actions/user/sign-in'
-//import Title from '../components/Title'
-//<Title content="Sign In" />
+import Title from '../Title'
+
+const dialogStyle = {
+  width: '400px',
+  margin: '50px auto',
+  padding: '2rem',
+}
+
+const buttonStyle = {
+  float: 'right',
+  marginLeft: '2rem',
+}
 
 export class SignIn extends PureComponent {
+  static propTypes = {
+    push: PropTypes.func.isRequired,
+    signIn: PropTypes.func.isRequired,
+    signedIn: PropTypes.bool,
+  }
+
+  componentWillMount() {
+    const { replace, signedIn } = this.props
+    if (signedIn) replace('/')
+  }
+
   submitForm(event) {
     event.preventDefault()
-
     const user = {
-      email: this.refs.email.value,
-      password: this.refs.password.value
+      email: this.refs.email.getValue(),
+      password: this.refs.password.getValue(),
     }
-
     this.props.signIn(user)
+  }
+
+  signUp() {
+    this.props.push('/sign-up')
   }
 
   render() {
     return (
-      <div className="sign-up form">
-        <h1> Sign in </h1>
+      <Paper style={ dialogStyle }>
+        <Title content="Sign In" level={2} />
 
         <form onSubmit={this.submitForm.bind(this)}>
           <div className="input">
-            <input ref="email" type="email" placeholder="Email address" />
+            <TextField ref="email" type="email" hintText="Email address" />
           </div>
           <div className="input">
-            <input ref="password" type="password" placeholder="Password" />
+            <TextField ref="password" type="password" hintText="Password"  />
           </div>
-          <input type="submit" value="Sign in" />
         </form>
-      </div>
+        <FlatButton
+          onClick={ this.signUp.bind(this) }
+          label="Sign up" />
+        <RaisedButton
+          style={ buttonStyle }
+          onClick={ this.submitForm.bind(this) }
+          label="Sign in"
+          primary={true} />
+      </Paper>
     )
   }
 }
 
-export default connect(null, { signIn })(SignIn)
+const mapStateToProps = ({ currentUser }) => ({
+  signedIn: !!currentUser && !!currentUser._id,
+})
+
+export default connect(mapStateToProps, { signIn, replace, push })(SignIn)

@@ -18,14 +18,12 @@ export class SignOut extends PureComponent {
     const { signedIn } = this.props
     return (
       <nav className="signOut">
-        <ul>
-          <li>
-            { signedIn ?
-              <a href="#" onClick={this.signOut.bind(this)}>Sign out</a> :
-              <Link to="/sign-in">Sign in</Link>
-            }
-          </li>
-        </ul>
+        <div>
+          { signedIn ?
+            <a href="#" onClick={this.signOut.bind(this)}>Sign out</a> :
+            <Link to="/sign-in">Sign in</Link>
+          }
+        </div>
       </nav>
     )
   }

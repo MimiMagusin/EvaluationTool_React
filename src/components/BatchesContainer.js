@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Title from '../components/Title'
-import BatchItem from './BatchItem'
+import {BatchItem} from './BatchItem'
 //import BatchEditor from './BatcheEditor'
 import fetchBatches from '../actions/batches/fetch'
 import subscribeToBatchesService from '../actions/batches/subscribe'
@@ -15,8 +15,12 @@ export class BatchesContainer extends PureComponent {
   }
 
   componentWillMount() {
-    this.props.fetchBatches()
-    this.props.subscribeToBatchesService()
+    const { batches, fetchBatches, subscribeToBatchesService, subscribed } = this.props
+    //const { batchId } = this.props.match.params
+
+    if (!batches) fetchBatches()
+    //getCurrentBatch(batchId)
+    if (!subscribed) subscribeToBatchesService()
   }
 
   renderBatch(batch, index) {
@@ -25,6 +29,13 @@ export class BatchesContainer extends PureComponent {
   }
 
   render() {
+  const { batches } = this.props
+    // if (!batches) {
+    //   return (
+    //     <h2> Nothing Yet! </h2>
+    //   )
+    // }
+
     return(
       <div className="batches wrapper">
         <header>
@@ -39,7 +50,15 @@ export class BatchesContainer extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ batches }) => ({ batches })
+
+const mapStateToProps = ({ batches, }) => {
+  return{
+    batches,
+    // subscribed: subscriptions.includes('batches')
+  }
+}
+
 const mapDispatchToProps = { fetchBatches, subscribeToBatchesService }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(BatchesContainer)

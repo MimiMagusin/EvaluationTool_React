@@ -21,7 +21,6 @@ export default () => {
       }
     })
       .then((result) => {
-        debugger;
         dispatch(loadSuccess())
         dispatch(loading(false))
         dispatch({

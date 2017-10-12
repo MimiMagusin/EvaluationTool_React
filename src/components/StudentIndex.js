@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import fetchStudents from '../actions/students/fetch'
 import subscribeToStudentsService from '../actions/students/subscribe'
+import Student from './Student'
 
 
 class StudentIndex extends PureComponent {
@@ -17,7 +18,7 @@ class StudentIndex extends PureComponent {
   }
 
   renderStudent(student, index) {
-    return <student
+    return <Student
       key={index} { ...student } />
   }
 

@@ -56,7 +56,7 @@ export default class Student extends PureComponent {
             evalutation={<span>by <b>{tile.evaluation}</b></span>}
             batch={tile.batch}
           >
-            <img src={tile.img} alt="Student" />
+            <img src={tile.img} alt="StudentPicture!" />
           </GridTile>
         ))}
       </GridList>

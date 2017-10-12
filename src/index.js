@@ -8,6 +8,7 @@ import registerServiceWorker from './registerServiceWorker'
 import App from './App'
 import signIn from './components/users/sign-in'
 import BatchesContainer from './components/BatchesContainer'
+import BatchesShow from './components/BatchesShow'
 
 import './index.css'
 
@@ -17,6 +18,7 @@ ReactDOM.render(
       <Route path="/" component={App}>
         <IndexRoute component={BatchesContainer } />
         <Route path="/sign-in" component={signIn} />
+          <Route path="/batches/:batchId" component={BatchesShow} />
       </Route>
     </Router>
   </Provider>,

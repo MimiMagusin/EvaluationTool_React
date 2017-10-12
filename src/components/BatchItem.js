@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router'
 //import './BatchItem.css'
 
-//const PLACEHOLDER = 'http://via.placeholder.com/500x180?text=No%20Image'
 
 export class BatchItem extends PureComponent {
   static propTypes = {

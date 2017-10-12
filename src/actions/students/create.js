@@ -13,7 +13,7 @@ export default (student) => {
 
     api.app.authenticate()
       .then(() => {
-        const backend = api.service('student')
+        const backend = api.service('students')
         backend.create(student)
           .then((result) => {
             dispatch(loading(false))

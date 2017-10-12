@@ -4,7 +4,7 @@ import Editor from 'react-medium-editor'
 import { connect } from 'react-redux'
 import 'medium-editor/dist/css/medium-editor.css'
 import 'medium-editor/dist/css/themes/default.css'
-import createStudent from '../actions/batches/create'
+import createStudent from '../actions/students/create'
 //import './BatchEditor.css'
 
 

@@ -41,6 +41,7 @@ export default class Student extends PureComponent {
         img: `${profilePicture}`,
         title: `${firstName} ${lastName}`,
         evaluation: `${currentEvaluation}`,
+        batch: `Batch: ${batch}`
       },
     ]
 
@@ -56,6 +57,7 @@ export default class Student extends PureComponent {
             key={tile.img}
             title={tile.title}
             evalutation={<span>by <b>{tile.evaluation}</b></span>}
+            batch={tile.batch}
           >
             <img src={tile.img} />
           </GridTile>

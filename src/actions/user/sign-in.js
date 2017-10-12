@@ -16,11 +16,12 @@ export default (user) => {
   console.log(user)
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
+
     api.signIn(user)
       .then((user) => {
         dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: LOAD_SUCCESS })
-        debugger;
+
         api.app.set('user', user)
 
         history.replace('/')

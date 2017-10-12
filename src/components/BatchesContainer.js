@@ -26,28 +26,12 @@ export class BatchesContainer extends PureComponent {
   }
 
   render() {
-<<<<<<< HEAD
-  const { batches} = this.props
-    if (!batches) {
-      return (
-        <h2> Nothing Yet! </h2>
-      )
-    }
-||||||| merged common ancestors
-  const { batches } = this.props
-    // if (!batches) {
-    //   return (
-    //     <h2> Nothing Yet! </h2>
-    //   )
-    // }
-=======
   const { batches } = this.props
     if (!batches) {
       return (
-        <h2> Nothing Yet! </h2>
+        <h2> On its way! </h2>
       )
     }
->>>>>>> fixCurrentUser
 
     return(
       <div className="batches wrapper">

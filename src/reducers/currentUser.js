@@ -1,19 +1,21 @@
 import { USER_SIGNED_IN } from '../actions/user/sign-in'
-//import { USER_SIGNED_OUT } from '../actions/user/sign-out'
+import { USER_SIGNED_OUT } from '../actions/user/sign-out'
 
-const CURRENT_USER_KEY = 'currentUserBatchesB10'
+const currentUserKey = 'gamesUserb8'
+const currentUserFromLocalStorage = JSON.parse(
+  window.localStorage.getItem(currentUserKey) || 'null'
+)
 
-const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER_KEY) || 'null')
-
-export default (state = currentUser, { type, payload } = {}) => {
+export default (state = currentUserFromLocalStorage, { type, payload } = {}) => {
   switch (type) {
     case USER_SIGNED_IN :
-      localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(payload))
-      return { ...payload }
+      const currentUser = { ...payload }
+      window.localStorage.setItem(currentUserKey, JSON.stringify(currentUser))
+      return currentUser
 
-    // case USER_SIGNED_OUT :
-    //   localStorage.removeItem(CURRENT_USER_KEY)
-    //   return null
+    case USER_SIGNED_OUT :
+      window.localStorage.removeItem(currentUserKey)
+      return null
 
     default :
       return state

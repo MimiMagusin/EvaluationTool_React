@@ -1,4 +1,3 @@
-//import { SEED_BATCHES } from '../actions/batches/seed'
 import { FETCHED_BATCHES } from '../actions/batches/fetch'
 
 import {
@@ -13,8 +12,6 @@ const randomId = () => {
 
 export default (state = [], { type, payload } = {}) => {
   switch (type) {
-    //case SEED_BATCHES :
-    //  return state.concat(payload)
 
     case FETCHED_BATCHES :
       return [].concat(payload)

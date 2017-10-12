@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import fetchBatches from '../actions/batches/fetch'
 import subscribeToBatchesService from '../actions/batches/subscribe'
 import AddStudent from './AddStudent'
+import StudentIndex from './StudentIndex'
 
 
 class BatchesShow extends PureComponent {
@@ -26,6 +27,7 @@ class BatchesShow extends PureComponent {
         </div>
         <div className = "studentIndex">
           <h2> Students: </h2>
+          <StudentIndex />
         </div>
         <div className = "addStudent">
           <AddStudent />

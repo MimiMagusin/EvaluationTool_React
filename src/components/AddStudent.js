@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import Editor from 'react-medium-editor'
+//import Editor from 'react-medium-editor'
 //import toMarkdown from 'to-markdown'
 import { connect } from 'react-redux'
 import 'medium-editor/dist/css/medium-editor.css'

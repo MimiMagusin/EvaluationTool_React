@@ -10,17 +10,14 @@ import subscribeToBatchesService from '../actions/batches/subscribe'
 
 export class BatchesContainer extends PureComponent {
   static propTypes = {
-    //batches: PropTypes.array.isRequired,
+    batches: PropTypes.array.isRequired,
     fetchBatches: PropTypes.func.isRequired,
   }
 
   componentWillMount() {
-    const { batches, fetchBatches, subscribeToBatchesService, subscribed } = this.props
-    //const { batchId } = this.props.match.params
-this.props.fetchBatches()
-    if (!batches) fetchBatches()
-    //getCurrentBatch(batchId)
-    if (!subscribed) subscribeToBatchesService()
+    //const {fetchBatches, subscribeToBatchesService, subscribed } = this.props
+    this.props.fetchBatches()
+    this.props.subscribeToBatchesService()
   }
 
   renderBatch(batch, index) {
@@ -29,12 +26,12 @@ this.props.fetchBatches()
   }
 
   render() {
-  const { batches } = this.props
-    // if (!batches) {
-    //   return (
-    //     <h2> Nothing Yet! </h2>
-    //   )
-    // }
+  const { batches} = this.props
+    if (!batches) {
+      return (
+        <h2> Nothing Yet! </h2>
+      )
+    }
 
     return(
       <div className="batches wrapper">

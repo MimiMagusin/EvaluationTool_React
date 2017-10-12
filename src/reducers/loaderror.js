@@ -1,12 +1,12 @@
-import { LOADING_ERROR } from '../actions/loading/loaderror'
-import { LOADING_SUCCESS } from '../actions/loading/loadsucces'
+import { LOAD_ERROR } from '../actions/loading/load-error'
+import { LOAD_SUCCESS } from '../actions/loading/load-success'
 
 export default (state = "", { type, payload } = {}) => {
   switch(type) {
-    case LOADING_ERROR :
+    case LOAD_ERROR :
      console.error(payload)
      return  payload.message
-    case LOADING_SUCCESS :
+    case LOAD_SUCCESS :
       return null
     default :
       return state

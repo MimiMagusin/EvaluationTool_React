@@ -19,19 +19,20 @@ export default (state = [], { type, payload } = {}) => {
     case FETCHED_BATCHES :
       return [].concat(payload)
 
-    // case BATCH_CREATED :
-    //   let newId = randomId()
-    //   while (state.map((r) => (r._id)).includes(newId)) { newId = randomId() }
-    //   return [{ _id: newId, ...payload }].concat(state)
-    //
-    // case BATCH_UPDATED :
-    //   return state.map((batch) => {
-    //     if (batch._id === payload._id) return { ...batch, ...payload }
-    //     return batch
-    //   })
+    case BATCH_CREATED :
+      let newId = randomId()
+      while (state.map((r) => (r._id)).includes(newId)) { newId = randomId() }
+      return [{ _id: newId, ...payload }].concat(state)
 
-    //case BATCH_REMOVED :
-      //return state.filter((batch) => {
-        //return batch._id !== payload._id
-    //  })
+    case BATCH_UPDATED :
+      return state.map((batch) => {
+        if (batch._id === payload._id) return { ...batch, ...payload }
+        return batch
+      })
+
+    case BATCH_REMOVED :
+      return state.filter((batch) => {
+        return batch._id !== payload._id
+     })
     }
+}

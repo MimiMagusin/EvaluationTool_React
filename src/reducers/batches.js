@@ -34,5 +34,8 @@ export default (state = [], { type, payload } = {}) => {
       return state.filter((batch) => {
         return batch._id !== payload._id
      })
+     default:
+      return state
     }
+
 }

@@ -24,11 +24,11 @@ class StudentIndex extends PureComponent {
 
   render(){
     const { students } = this.props
-    if (!students) {
-      return (
-        <h2> On its way! </h2>
-      )
-    }
+      if (!students) {
+        return (
+          <h2> On its way! </h2>
+        )
+      }
 
     return(
       <div>

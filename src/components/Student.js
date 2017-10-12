@@ -2,12 +2,9 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 //import { connect } from 'react-redux'
 //import updateStudent from '../actions/students/update'
-import { Link } from 'react-router'
+//import { Link } from 'react-router'
 //import './StudentItem.css'
 import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 const styles = {
   root: {
@@ -59,7 +56,7 @@ export default class Student extends PureComponent {
             evalutation={<span>by <b>{tile.evaluation}</b></span>}
             batch={tile.batch}
           >
-            <img src={tile.img} />
+            <img src={tile.img} alt="Student" />
           </GridTile>
         ))}
       </GridList>

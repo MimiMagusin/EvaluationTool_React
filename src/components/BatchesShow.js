@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import fetchBatches from '../actions/batches/fetch'
 import subscribeToBatchesService from '../actions/batches/subscribe'
+import AddStudent from './AddStudent'
 
 
 class BatchesShow extends PureComponent {
@@ -25,6 +26,9 @@ class BatchesShow extends PureComponent {
         </div>
         <div className = "studentIndex">
           <h2> Students: </h2>
+        </div>
+        <div className = "addStudent">
+          <AddStudent />
         </div>
       </div>
     )

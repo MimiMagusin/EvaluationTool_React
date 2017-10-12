@@ -18,7 +18,7 @@ describe('<App />', () => {
     expect(app).to.have.descendants(Title)
   })
 
-  it('sets the Title to "All Recipes"', () => {
+  it('sets the Title to "Evaluate"', () => {
     expect(app).to.contain(<Title content="Evaluate" />)
   })
 })

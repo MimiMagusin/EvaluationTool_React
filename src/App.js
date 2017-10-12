@@ -10,10 +10,12 @@ class App extends Component {
     return (
       <div className="App">
       <MuiThemeProvider>
-        < SignOut />
-        < Title content= "Evaluate" />
-        { this.props.children }
-      </MuiThemeProvider>  
+        <div>
+          < SignOut />
+          < Title content= "Evaluate" />
+          { this.props.children }
+        </div>
+      </MuiThemeProvider>    
       </div>
     )
   }

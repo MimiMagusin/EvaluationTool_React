@@ -9,6 +9,7 @@ import App from './App'
 import signIn from './components/users/sign-in'
 import BatchesContainer from './components/BatchesContainer'
 import BatchesShow from './components/BatchesShow'
+import StudentShow from './components/StudentShow'
 
 import './index.css'
 
@@ -19,6 +20,7 @@ ReactDOM.render(
         <IndexRoute component={BatchesContainer } />
         <Route path="/sign-in" component={signIn} />
           <Route path="/batches/:batchId" component={BatchesShow} />
+        <Route path="/evaluation" component={StudentShow} />
       </Route>
     </Router>
   </Provider>,

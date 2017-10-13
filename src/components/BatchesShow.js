@@ -5,6 +5,7 @@ import fetchBatches from '../actions/batches/fetch'
 import subscribeToBatchesService from '../actions/batches/subscribe'
 import AddStudent from './AddStudent'
 import StudentIndex from './StudentIndex'
+import Ask from './Ask'
 
 
 class BatchesShow extends PureComponent {
@@ -24,6 +25,7 @@ class BatchesShow extends PureComponent {
       <div>
         <div className = "header">
           <h2> Batch #{number} </h2>
+          <Ask />
         </div>
         <div className = "studentIndex">
           <h2> Students: </h2>

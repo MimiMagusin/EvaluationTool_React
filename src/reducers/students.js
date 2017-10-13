@@ -2,8 +2,8 @@ import { FETCHED_STUDENTS } from '../actions/students/fetch'
 
 import {
   STUDENT_CREATED,
-  //RECIPE_UPDATED,
-  //RECIPE_REMOVED
+  STUDENT_UPDATED,
+  STUDENT_REMOVED
 } from '../actions/students/subscribe'
 
 const randomId = () => {
@@ -21,16 +21,16 @@ export default (state = [], { type, payload } = {}) => {
       while (state.map((r) => (r._id)).includes(newId)) { newId = randomId() }
       return [{ _id: newId, ...payload }].concat(state)
 
-    // case STUDENT_UPDATED :
-    //   return state.map((recipe) => {
-    //     if (recipe._id === payload._id) return { ...recipe, ...payload }
-    //     return recipe
-    //   })
+    case STUDENT_UPDATED :
+      return state.map((student) => {
+        if (student._id === payload._id) return { ...student, ...payload }
+        return student
+      })
 
-    // case STUDENT_REMOVED :
-    //   return state.filter((recipe) => {
-    //     return recipe._id !== payload._id
-    //   })
+    case STUDENT_REMOVED :
+      return state.filter((student) => {
+        return student._id !== payload._id
+      })
 
     default :
       return state

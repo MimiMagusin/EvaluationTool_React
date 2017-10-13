@@ -1,4 +1,5 @@
 import FlatButton from 'material-ui/FlatButton';
+import whichColor from './WhichColor'
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -25,11 +26,26 @@ class StudentIndex extends PureComponent {
 
   render(){
     const { students } = this.props
-      // if (!students) {
-      //   return (
-      //     <h2> On its way! </h2>
-      //   )
-      // }
+      if (!students) {
+        return (
+          <h2> On its way! </h2>
+        )
+      }
+
+      const redArray = students.filter(function(student){
+        return student.currentEvaluation === "red"
+      })
+
+      const yellowArray = students.filter(function(student){
+        return student.currentEvaluation === "yellow"
+      })
+
+      const greenArray = students.filter(function(student){
+        return student.currentEvaluation === "green"
+      })
+
+      const thisColor = whichColor(redArray, yellowArray, greenArray, students)
+      const student = thisColor[Math.floor(Math.random()*(students.length))]
 
     return(
       <div>
@@ -45,19 +61,11 @@ class StudentIndex extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ students }, { params }) => {
-  const batch = students.reduce((prev, next) => {
-    if (next._id === params.studentsId) {
-      return next
-    }
-    return prev
-  }, {})
-
-  return {
-    ...batch
+const mapStateToProps = ({ students, }) => {
+  return{
+    students,
   }
 }
-
 const mapDispatchToProps = { fetchStudents, subscribeToStudentsService }
 
 export default connect(mapStateToProps, mapDispatchToProps)(StudentIndex)

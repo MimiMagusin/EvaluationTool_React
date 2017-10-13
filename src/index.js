@@ -20,7 +20,7 @@ ReactDOM.render(
         <IndexRoute component={BatchesContainer } />
         <Route path="/sign-in" component={signIn} />
           <Route path="/batches/:batchId" component={BatchesShow} />
-        <Route path="/evaluation" component={StudentShow} />
+        <Route path="/students/:studentId" component={StudentShow} />
       </Route>
     </Router>
   </Provider>,
